@@ -11,11 +11,11 @@ const Home: React.FC = () => {
         </IonToolbar>
       </IonHeader> */}
       <IonContent fullscreen>
-        <IonHeader collapse="condense">
+        {/* <IonHeader collapse="condense">
           <IonToolbar>
             <IonTitle size="large">Blank</IonTitle>
           </IonToolbar>
-        </IonHeader>
+        </IonHeader> */}
         <ExploreContainer />
       </IonContent>
     </IonPage>
