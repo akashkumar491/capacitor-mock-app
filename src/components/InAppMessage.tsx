@@ -28,7 +28,7 @@ const InAppMessage: React.FC<InAppMessageProps> = ({
   useEffect(() => {
     // * REPLACE localhost with Your ip address * //
     const fetchAnalytics = async () => {
-      const response = await fetch("http://192.168.1.48:3001/analytics");
+      const response = await fetch("http://localhost:3001/analytics");
       const data = await response.json();
       setAnalytics({ ...data });
     };
@@ -47,7 +47,7 @@ const InAppMessage: React.FC<InAppMessageProps> = ({
         updatedAnalytics = { ...analytics, no: analytics.no + 1 };
       }
       setAnalytics(updatedAnalytics);
-      const result = await fetch("http://192.168.1.48:3001/analytics", {
+      const result = await fetch("http://localhost:3001/analytics", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -55,7 +55,7 @@ const InAppMessage: React.FC<InAppMessageProps> = ({
         body: JSON.stringify(updatedAnalytics),
       });
 
-      const res = await fetch("http://192.168.1.48:3001/analytics");
+      const res = await fetch("http://localhost:3001/analytics");
       const currentData = await res.json();
       setAnalytics(currentData);
       // alert(`Current Count- YES:${currentData.yes}  NO:${currentData.no}`);
